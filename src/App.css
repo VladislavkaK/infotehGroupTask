@@ -23,6 +23,65 @@
   color: #61dafb;
 }
 
+.input {
+  margin-top: 100px;
+}
+
+.IoIosTrash {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.SearchInput {
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.Input {
+  height: 50px;
+}
+
+.SearchInput__search--input, 
+.SearchInput__seact--submit, 
+.IntegerInput__input--integer, .Input__input,
+.FloatInput__input--float {
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.SearchInput__search--input, 
+.IntegerInput__input--integer, .Input__input,
+.FloatInput__input--float {
+  width: 180px;
+  border: 1px solid black;
+  height: 42px;
+  padding-left: 15px;
+}
+.SearchInput__seact--submit {
+  height: 26px;
+  width: 26px;
+  margin-right: 105px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  cursor: pointer;
+}
+.SearchInput__seact--submit:before {
+  content: "\f105";
+  font-family: FontAwesome;
+  color: #F9F0DA;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.SearchInput__seact--delete {
+  position: absolute;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
