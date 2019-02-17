@@ -3,23 +3,42 @@ import propsFloatInput from '../hoc/propsFloatInput';
 import DeleteButton from './DeleteButton';
 import PropTypes from 'prop-types';
 import '../App.css';
+import Input from './Input';
 
-const Input = propsFloatInput(({ placeholder, floatValue, onFloatValueChange, deleteOnFloat }) => {
-    
+const FloatInput = ({ 
+   value,
+   placeholder,
+   onChange,
+   onDelete,
+   min,
+   max,
+   precision,
+   className,
+   onFocus,
+   onBlur,
+   onKeyDown
+}) => {
+   
     return (
+        
         <div className="FloatInput">
-            <input className="FloatInput__input--float" 
-                type="text"
-                placeholder={placeholder} 
-                value={floatValue}
-                onChange={onFloatValueChange}  
-            />
-            <DeleteButton onDelete={deleteOnFloat} />
+            <Input 
+                className={`FloatInput__input--float ${className}`}
+                placeholder= {placeholder}
+                value={typeof value === "number" ? '' : value}
+                onChange={onChange}
+                onDelete={onDelete}
+                onKeyDown={onKeyDown}
+                focus={onFocus}
+                blur={onBlur}
+                min={min}
+                max={max}
+                precision={precision} />
         </div>
     )
-})
+}
 
-Input.propTypes = {
+FloatInput.propTypes = {
     value: PropTypes.string.isRequired,
     placeholder: PropTypes.string,
     onChange: PropTypes.func.isRequired,
@@ -28,4 +47,4 @@ Input.propTypes = {
     precision: PropTypes.number
 };
 
-export default Input;
+export default FloatInput;

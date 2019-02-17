@@ -1,5 +1,4 @@
-import { Component } from 'react';
-import { compose, withState, withHandlers } from 'recompose';
+import { compose, withState, withHandlers} from 'recompose';
 
 const propsSimpleInput = compose(
     withState('inputValue', 'onInputValueChange', ''),

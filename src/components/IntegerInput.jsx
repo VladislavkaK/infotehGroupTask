@@ -1,28 +1,40 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import propsIntegerInput from '../hoc/propsIntegerInput';
-import DeleteButton from './DeleteButton';
+import Input from './Input';
+// import {compose, withProps} from 'recompose'
 import PropTypes from 'prop-types';
 import '../App.css';
 
-const IntegerInput = propsIntegerInput(({ placeholder, integerValue, onIntegerValueChange, deleteOnInteger }) => {
+const IntegerInput = ({ 
+    placeholder, 
+    value, 
+    className,
+    onChange, 
+    onDelete,
+    min,
+    max,
+}) => {
     
     return (
+        
         <div className="IntegerInput">
-            <input className="IntegerInput__input--integer"
-                type="text" 
-                placeholder={placeholder} 
-                value={integerValue}
-                onChange={onIntegerValueChange}
-            />
-            <DeleteButton onDelete={deleteOnInteger} />
+            <Input 
+                className={`IntegerInput__input--integer ${className}`}
+                placeholder= {placeholder}
+                value={typeof value === "number" ? '' : value}
+                onChange={onChange}
+                onDelete={onDelete}
+                min={min}
+                max={max} />
         </div>
+        
     )
-})
+}
 
 IntegerInput.propTypes = {
     placeholder: PropTypes.string,
-    onChange: PropTypes.func.isRequired,
-    value: PropTypes.string.isRequired,
+    onIntegerValueChange: PropTypes.func.isRequired,
+    integerValue: PropTypes.number.isRequired,
     min: PropTypes.number,
     max: PropTypes.number
 };

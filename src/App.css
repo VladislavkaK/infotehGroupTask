@@ -43,6 +43,14 @@
   height: 50px;
 }
 
+.IntegerInput__input--integer.red {
+  border: 2px solid red;
+}
+
+.FloatInput__input--float.red {
+  border: 2px solid red;
+}
+
 .SearchInput__search--input, 
 .SearchInput__seact--submit, 
 .IntegerInput__input--integer, .Input__input,
@@ -64,7 +72,7 @@
 .SearchInput__seact--submit {
   height: 26px;
   width: 26px;
-  margin-right: 105px;
+  margin-right: 80px;
   position: absolute;
   top: 8px;
   right: 8px;
